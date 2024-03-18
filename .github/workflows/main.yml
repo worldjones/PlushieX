@@ -16,11 +16,11 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '5.0.x'
+          dotnet-version: '5.0'
 
 
       - name: Restore
-      run: dotnet restore ./Shop.Catalog
+        run: dotnet restore ./Shop.Catalog
 
       - name: Build
         run: dotnet build ./Shop.Catalog --configuration Release --no-restore
