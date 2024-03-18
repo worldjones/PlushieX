@@ -1,0 +1,29 @@
+name: Plushie
+
+on: workflow_dispatch:
+push:
+  branches:
+  -  main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '5.0.x'
+
+
+      - name: Restore
+      run: dotnet restore ./Shop.Catalog
+
+      - name: Build
+        run: dotnet build ./Shop.Catalog --configuration Release --no-restore
+
+      - name: Publish
+        run: dotnet publish ./Shop.Catalog --configuration Release --no build
+  
