@@ -19,4 +19,4 @@ jobs:
         dotnet-version: '5.0'
 
     - name: Build
-      run: dotnet build ./Shop.Catalog/Src
+      run: dotnet build /Shop.Catalog/Src
