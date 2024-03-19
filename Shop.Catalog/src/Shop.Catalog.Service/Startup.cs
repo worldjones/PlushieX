@@ -47,17 +47,17 @@ namespace Shop.Catalog.Service
             services.AddMongo()
                     .AddMongoRepository<Plushie>("plushies");
 
-            services.AddMassTransit(x =>
-            {
-                x.UsingRabbitMq((context, configurator) =>
-                {
-                    var RabbitMQSettings = Configuration.GetSection(nameof(RabbitMqSettings)).Get<RabbitMqSettings>();
-                    configurator.Host(RabbitMQSettings.Host);
-                    configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName, false));
-                });
-            });
+ //           services.AddMassTransit(x =>
+ //           {
+ //               x.UsingRabbitMq((context, configurator) =>
+ //               {
+ //                   var RabbitMQSettings = Configuration.GetSection(nameof(RabbitMqSettings)).Get<RabbitMqSettings>();
+ //                   configurator.Host(RabbitMQSettings.Host);
+ //                   configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName, false));
+ //               });
+ //           });
 
-            services.AddMassTransitHostedService();
+          //  services.AddMassTransitHostedService();
 
             services.AddControllers(options =>
             {
