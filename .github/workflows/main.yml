@@ -20,5 +20,5 @@ jobs:
 
     - name: Build
       run: |
-        cd Shop.Catalog
-        dotnet build
+        cd Shop.Catalog/src/Shop.Catalog.Service
+        dotnet build Shop.Catalog.Service.csproj
