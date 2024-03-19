@@ -64,7 +64,7 @@ namespace Shop.Catalog.Service.Controllers
 
             await plushiesRepository.CreateAsync(plushie);
 
-            //         await publishEndpoint.Publish(new CatalogPlushieCreated(plushie.Id, plushie.Name, plushie.Description));
+    //        await publishEndpoint.Publish(new CatalogPlushieCreated(plushie.Id, plushie.Name, plushie.Description));
 
 
             return CreatedAtAction(nameof(GetByIdAsync), new { id = plushie.Id }, plushie);
