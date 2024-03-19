@@ -17,3 +17,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         dotnet-version: '5.0'
+
+    - name: Build
+      run: dotnet build ./Shop.Catalog
+      working-directory: /Shop.Catalog
