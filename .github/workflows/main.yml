@@ -19,19 +19,33 @@ jobs:
         dotnet-version: '5.0'
 
 
-    - name: Restore
+    - name: RestoreCatalog
       run: |
         cd Shop.Catalog/src/Shop.Catalog.Service
         dotnet restore Shop.Catalog.Service.csproj
 
-    - name: Build
+    - name: BuildCatalog
       run: |
         cd Shop.Catalog/src/Shop.Catalog.Service
         dotnet build Shop.Catalog.Service.csproj
 
-    - name: Publish
+    - name: PublishCatalog
       run: |
         cd Shop.Catalog/src/Shop.Catalog.Service
         dotnet publish Shop.Catalog.Service.csproj
 
+    - name: RestoreInventory
+      run: |
+        cd Shop.Catalog/src/Shop.Inventory.Service
+        dotnet restore Shop.Inventory.Service.csproj
+
+    - name: BuildInventory
+      run: |
+        cd Shop.Catalog/src/Shop.Inventory.Service
+        dotnet build Shop.Inventory.Service.csproj
+
+    - name: PublishInventory
+      run: |
+        cd Shop.Catalog/src/Shop.Inventory.Service
+        dotnet publish Shop.Inventory.Service.csproj
 
