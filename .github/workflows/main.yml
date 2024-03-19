@@ -18,7 +18,20 @@ jobs:
       with:
         dotnet-version: '5.0'
 
+
+    - name: Restore
+      run: |
+        cd Shop.Catalog/src/Shop.Catalog.Service
+        dotnet restore Shop.Catalog.Service.csproj
+
     - name: Build
       run: |
         cd Shop.Catalog/src/Shop.Catalog.Service
         dotnet build Shop.Catalog.Service.csproj
+
+    - name: Publish
+      run: |
+        cd Shop.Catalog/src/Shop.Catalog.Service
+        dotnet publish Shop.Catalog.Service.csproj
+
+
