@@ -36,16 +36,16 @@ jobs:
 
     - name: RestoreInventory
       run: |
-        cd Shop.Catalog/src/Shop.Inventory.Service
+        cd Shop.Inventory/src/Shop.Inventory.Service
         dotnet restore Shop.Inventory.Service.csproj
 
     - name: BuildInventory
       run: |
-        cd Shop.Catalog/src/Shop.Inventory.Service
+        cd Shop.Inventory/src/Shop.Inventory.Service
         dotnet build Shop.Inventory.Service.csproj
 
     - name: PublishInventory
       run: |
-        cd Shop.Catalog/src/Shop.Inventory.Service
+        cd Shop.Inventory/src/Shop.Inventory.Service
         dotnet publish Shop.Inventory.Service.csproj
 
